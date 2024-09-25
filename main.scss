@@ -1,0 +1,64 @@
+$font-size: 68px;
+$list-font-size: 24px;
+$font-color: #036067;
+$list-font-color: #670332;
+
+// _button-styles.scss
+@import 'button-styles';
+
+h1 {
+    font-size: $font-size;
+    color: $font-color;
+}
+
+// nesting
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        font-size: $list-font-size;
+        color: $list-font-color;
+        background-color: aliceblue;
+    }
+}
+
+// Mixin
+@mixin display($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+div {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 150px;
+    @include display(row, center, center);
+}
+
+// Inheritance
+text-style {
+    font-style: italic;
+    font-size: 32px;
+    color: cadetblue;
+}
+
+h2 {
+    @extend text-style;
+}
+
+// Functions
+@function calculate-height($height) {
+    @return $height +100px;
+}
+
+p {
+    height: calculate-height(100px);
+    background-color: cornflowerblue;
+    color: white;
+    width: '50%';
+}
