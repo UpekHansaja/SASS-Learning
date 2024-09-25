@@ -1,2 +1,2 @@
 # SASS-Learning
-Study fundamental of SASS
+Study fundamentals of SASS
